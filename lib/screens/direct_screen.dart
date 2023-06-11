@@ -74,6 +74,7 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.back,
           centerTitle: true,
           title: const Text(
             'AimTool',
@@ -355,6 +356,7 @@ Available (Normal Global)''',
                                   TextField(
                                     controller: textEdit,
                                     cursorColor: AppColors.colorButton,
+                                    style: const TextStyle(color: Colors.white),
                                     decoration: const InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -378,6 +380,7 @@ Available (Normal Global)''',
                                                 content:
                                                     'Enter The Code Please!');
                                           } else {
+                                            textEdit.clear();
                                             Navigator.of(context).pop();
                                             showDialog(
                                               barrierDismissible: false,
