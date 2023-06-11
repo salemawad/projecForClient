@@ -68,6 +68,7 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
   bool _switchValue = false;
   bool _switchValueTow = true;
   bool _switchValueThree = true;
+  bool _switchValueFour = false;
   final String url = 'https://aimtool.site/get-cod-genuyf56jhf2/';
 
   @override
@@ -302,7 +303,7 @@ Available (Normal Global)''',
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 15,
             ),
             Row(
               children: [
@@ -323,7 +324,28 @@ Available (Normal Global)''',
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 15,
+            ),
+            Row(
+              children: [
+                Switch(
+                  value: _switchValueFour,
+                  activeColor: AppColors.colorButton,
+                  onChanged: (value) {
+                    setState(() {
+                      _switchValueFour = value;
+                    });
+                  },
+                ),
+                 Text(
+                  _switchValueFour?'Facebook Login(App Method)':'Facebook Login(Web Method)',
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 15,
             ),
             SizedBox(
               width: 320,
@@ -389,28 +411,28 @@ Available (Normal Global)''',
                                                 dialogContext = context;
                                                 return const Dialog(
                                                   alignment: Alignment.center,
-                                                  insetPadding:
-                                                      EdgeInsets.symmetric(
-                                                          horizontal: 155),
                                                   backgroundColor:
                                                       AppColors.background,
-                                                  child: SizedBox(
-                                                    height: 200,
-                                                    child: Column(
-                                                      children: [
-                                                        Text(
-                                                          'The invitation code is being verified! ',
-                                                          style: TextStyle(
-                                                              fontSize: 17,
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                        SizedBox(height: 10),
-                                                        CircularProgressIndicator(
-                                                          color: AppColors
-                                                              .colorButton,
-                                                        )
-                                                      ],
+                                                  child: Padding(
+                                                    padding: EdgeInsets.all(10),
+                                                    child: SizedBox(
+                                                      height: 130,
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            'The invitation code is being verified! ',
+                                                            style: TextStyle(
+                                                                fontSize: 16,
+                                                                color:
+                                                                    Colors.white),
+                                                          ),
+                                                          SizedBox(height: 10),
+                                                          CircularProgressIndicator(
+                                                            color: AppColors
+                                                                .colorButton,
+                                                          )
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 );
