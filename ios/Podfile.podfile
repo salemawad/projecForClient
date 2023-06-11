@@ -26,12 +26,11 @@ end
 require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
 
 flutter_ios_podfile_setup
-target 'Runner' do
-  platform :ios, '13.0'
-  # Pods for Runner
-end
+
+
 
 target 'Runner' do
+  platform :ios, '13.0'
   use_frameworks!
   use_modular_headers!
 
