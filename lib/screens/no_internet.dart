@@ -1,12 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/screens/splash_screen.dart';
 import 'package:untitled/widget/dialogWidget.dart';
-
 import '../widget/snack.dart';
 import 'colors.dart';
-import 'home.dart';
 
 class NoInternet extends StatefulWidget {
   const NoInternet({Key? key}) : super(key: key);
@@ -17,7 +15,6 @@ class NoInternet extends StatefulWidget {
 
 class _NoInternetState extends State<NoInternet>with Helpers {
   bool isConnected = false;
-  bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +27,9 @@ class _NoInternetState extends State<NoInternet>with Helpers {
           const SizedBox(
             height: 10,
           ),
-          const Text(
+           Text(
             "There's no internet connection",
-            style: TextStyle(
+            style: GoogleFonts.ibmPlexSans(
                 color: AppColors.colorButton,
                 fontSize: 25,
                 fontWeight: FontWeight.bold),
@@ -42,10 +39,10 @@ class _NoInternetState extends State<NoInternet>with Helpers {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: const Text(
+            child:  Text(
               '''Sorry, there is no internet on your device. Please check your network
                and try again!''',
-              style: TextStyle(color: Colors.white70),
+              style: GoogleFonts.ibmPlexSans(color: Colors.white70),
             ),
           ),
           const Spacer(),
@@ -69,9 +66,9 @@ class _NoInternetState extends State<NoInternet>with Helpers {
                     await  checkInternet();
                   },);
                 },
-                child: const Text(
+                child:  Text(
                   'TRY AGAIN',
-                  style: TextStyle(fontWeight: FontWeight.normal),
+                  style: GoogleFonts.ibmPlexSans(fontWeight: FontWeight.normal),
                 ),
             ),
           ),

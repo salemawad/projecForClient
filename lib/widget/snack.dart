@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Helpers {
 
@@ -18,7 +19,7 @@ class Helpers {
         content:  Text(
           content,
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style:   GoogleFonts.ibmPlexSans(
               color: Colors.white),
         )));
   }

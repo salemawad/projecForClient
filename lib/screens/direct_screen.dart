@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:untitled/screens/colors.dart';
 import 'package:untitled/widget/snack.dart';
@@ -75,11 +76,11 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.back,
+          backgroundColor: AppColors.back,
           centerTitle: true,
-          title: const Text(
+          title: Text(
             'AimTool',
-            style: TextStyle(
+            style: GoogleFonts.ibmPlexSans(
                 fontWeight: FontWeight.bold, color: AppColors.colorButton),
           )),
       backgroundColor: AppColors.background,
@@ -119,16 +120,16 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                       height: 20,
                     ),
                     RichText(
-                      text: const TextSpan(
+                      text:   TextSpan(
                         text: 'The Latest Version Of ',
-                        style: TextStyle(
+                        style: GoogleFonts.ibmPlexSans(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'AimTool',
-                            style: TextStyle(
+                            style: GoogleFonts.ibmPlexSans(
                                 fontSize: 20,
                                 decoration: TextDecoration.underline,
                                 color: AppColors.colorButton,
@@ -141,16 +142,16 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                       height: 20,
                     ),
                     RichText(
-                      text: const TextSpan(
+                      text:  TextSpan(
                         text: 'Supports All Versions Of  ',
-                        style: TextStyle(
+                        style: GoogleFonts.ibmPlexSans(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                         children: <TextSpan>[
-                          TextSpan(
+                            TextSpan(
                             text: '8 Ball Pool.',
-                            style: TextStyle(
+                            style: GoogleFonts.ibmPlexSans(
                                 fontSize: 20,
                                 decoration: TextDecoration.underline,
                                 color: AppColors.colorButton,
@@ -164,9 +165,9 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                     ),
                     Row(
                       children: [
-                        const Text(
+                         Text(
                           'Our Officiel Web',
-                          style: TextStyle(
+                          style: GoogleFonts.ibmPlexSans(
                               fontSize: 20,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
@@ -190,9 +191,9 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: const Text(
+                        child:  Text(
                           'https://aimtool.site/',
-                          style: TextStyle(
+                          style: GoogleFonts.ibmPlexSans(
                               decoration: TextDecoration.underline,
                               fontSize: 20,
                               color: AppColors.colorButton,
@@ -239,8 +240,8 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                                           Navigator.pop(context);
                                         });
                                       },
-                                      child: const Text('Accept',
-                                          style: TextStyle(
+                                      child:  Text('Accept',
+                                          style: GoogleFonts.ibmPlexSans(
                                               fontSize: 25,
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold)),
@@ -252,8 +253,8 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: const Text('Cancel',
-                                          style: TextStyle(
+                                      child:  Text('Cancel',
+                                          style: GoogleFonts.ibmPlexSans(
                                               fontSize: 25,
                                               color: Colors.white70,
                                               fontWeight: FontWeight.bold)),
@@ -268,12 +269,12 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
                     }
                   },
                 ),
-                const SizedBox(
+                 SizedBox(
                   width: 250,
                   child: Text(
                     '''Auto-Play Special
 Available (Normal Global)''',
-                    style: TextStyle(
+                    style: GoogleFonts.ibmPlexSans(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 )
@@ -297,7 +298,7 @@ Available (Normal Global)''',
                   _switchValueTow
                       ? 'Accelerated Record'
                       : 'Compatibility Record',
-                  style: const TextStyle(
+                  style:  GoogleFonts.ibmPlexSans(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 )
               ],
@@ -316,9 +317,9 @@ Available (Normal Global)''',
                     });
                   },
                 ),
-                const Text(
+                 Text(
                   'Global Overlay Draw',
-                  style: TextStyle(
+                  style: GoogleFonts.ibmPlexSans(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 )
               ],
@@ -337,9 +338,11 @@ Available (Normal Global)''',
                     });
                   },
                 ),
-                 Text(
-                  _switchValueFour?'Facebook Login(App Method)':'Facebook Login(Web Method)',
-                  style: const TextStyle(
+                Text(
+                  _switchValueFour
+                      ? 'Facebook Login(App Method)'
+                      : 'Facebook Login(Web Method)',
+                  style: GoogleFonts.ibmPlexSans(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 )
               ],
@@ -367,10 +370,10 @@ Available (Normal Global)''',
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text(
+                                  Text(
                                     textAlign: TextAlign.center,
                                     'Please Enter Your Invitation Code :',
-                                    style: TextStyle(
+                                    style: GoogleFonts.ibmPlexSans(
                                         fontSize: 30,
                                         color: AppColors.colorButton,
                                         fontWeight: FontWeight.bold),
@@ -378,7 +381,8 @@ Available (Normal Global)''',
                                   TextField(
                                     controller: textEdit,
                                     cursorColor: AppColors.colorButton,
-                                    style: const TextStyle(color: Colors.white),
+                                    style: GoogleFonts.ibmPlexSans(
+                                        color: Colors.white),
                                     decoration: const InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -409,25 +413,30 @@ Available (Normal Global)''',
                                               context: context,
                                               builder: (BuildContext context) {
                                                 dialogContext = context;
-                                                return const Dialog(
+                                                return Dialog(
                                                   alignment: Alignment.center,
                                                   backgroundColor:
                                                       AppColors.background,
                                                   child: Padding(
-                                                    padding: EdgeInsets.all(10),
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10),
                                                     child: SizedBox(
                                                       height: 130,
                                                       child: Column(
                                                         children: [
                                                           Text(
                                                             'The invitation code is being verified! ',
-                                                            style: TextStyle(
-                                                                fontSize: 16,
-                                                                color:
-                                                                    Colors.white),
+                                                            style: GoogleFonts
+                                                                .ibmPlexSans(
+                                                                    fontSize:
+                                                                        16,
+                                                                    color: Colors
+                                                                        .white),
                                                           ),
-                                                          SizedBox(height: 10),
-                                                          CircularProgressIndicator(
+                                                          const SizedBox(
+                                                              height: 10),
+                                                          const CircularProgressIndicator(
                                                             color: AppColors
                                                                 .colorButton,
                                                           )
@@ -480,8 +489,8 @@ Available (Normal Global)''',
                                             );
                                           }
                                         },
-                                        child: const Text('Check',
-                                            style: TextStyle(
+                                        child: Text('Check',
+                                            style: GoogleFonts.ibmPlexSans(
                                                 fontSize: 20,
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold)),
@@ -501,8 +510,8 @@ Available (Normal Global)''',
                                             throw 'Could not launch $url';
                                           }
                                         },
-                                        child: const Text('Get Code',
-                                            style: TextStyle(
+                                        child: Text('Get Code',
+                                            style: GoogleFonts.ibmPlexSans(
                                                 fontSize: 20,
                                                 color: Colors.white70,
                                                 fontWeight: FontWeight.bold)),
@@ -515,9 +524,10 @@ Available (Normal Global)''',
                       },
                     );
                   },
-                  child: const Text(
+                  child: Text(
                     'START GAME',
-                    style: TextStyle(fontWeight: FontWeight.normal),
+                    style:
+                        GoogleFonts.ibmPlexSans(fontWeight: FontWeight.normal),
                   )),
             )
           ]),

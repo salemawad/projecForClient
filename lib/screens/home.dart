@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/screens/direct_screen.dart';
 import 'package:untitled/widget/dialogWidget.dart';
 
@@ -56,8 +57,7 @@ class _HomeState extends State<Home> {
                       width: 300,
                       child: Text(
                         text[index],
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 25),
+                        style: GoogleFonts.ibmPlexSans(color: Colors.white,fontSize: 25),
                         textAlign: TextAlign.center,
                       )),
                 ],
@@ -111,9 +111,9 @@ class _HomeState extends State<Home> {
                   });
 
             },
-            child: const Text(
+            child:  Text(
               'Direct Enter',
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.ibmPlexSans(color: Colors.white),
             ),
           ),
         ),
