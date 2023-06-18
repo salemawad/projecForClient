@@ -18,6 +18,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+
 bool isConnect= false;
 void checkInternetConnectivity() async {
   try {
