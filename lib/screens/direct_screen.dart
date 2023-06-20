@@ -370,153 +370,159 @@ Available (Normal Global)''',
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    textAlign: TextAlign.center,
-                                    'Please Enter Your Invitation Code :',
-                                    style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 30,
-                                        color: AppColors.colorButton,
-                                        fontWeight: FontWeight.bold),
+                                  Expanded(
+                                    child: Text(
+                                      textAlign: TextAlign.center,
+                                      'Please Enter Your Invitation Code :',
+                                      style: GoogleFonts.ibmPlexSans(
+                                          fontSize: 25,
+                                          color: AppColors.colorButton,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
-                                  TextField(
-                                    controller: textEdit,
-                                    cursorColor: AppColors.colorButton,
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: Colors.white),
-                                    decoration: const InputDecoration(
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Colors
-                                                .red), // تعيين لون الخط العادي
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: AppColors
-                                                .colorButton), // تعيين لون الخط عند التركيز
+                                  Expanded(
+                                    child: TextField(
+                                      controller: textEdit,
+                                      cursorColor: AppColors.colorButton,
+                                      style: GoogleFonts.ibmPlexSans(
+                                          color: Colors.white),
+                                      decoration: const InputDecoration(
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors
+                                                  .red), // تعيين لون الخط العادي
+                                        ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: AppColors
+                                                  .colorButton), // تعيين لون الخط عند التركيز
+                                        ),
                                       ),
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {
-                                          if (textEdit.text.isEmpty) {
-                                            ShowSnackBar(context,
-                                                content:
-                                                    'Enter The Code Please!');
-                                          } else {
-                                            textEdit.clear();
-                                            Navigator.of(context).pop();
-                                            showDialog(
-                                              barrierDismissible: false,
-                                              context: context,
-                                              builder: (BuildContext context) {
-                                                dialogContext = context;
-                                                return Dialog(
-                                                  alignment: Alignment.center,
-                                                  backgroundColor:
-                                                      AppColors.background,
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            10),
-                                                    child: SizedBox(
-                                                      height: 130,
-                                                      child: Column(
-                                                        children: [
-                                                          Text(
-                                                            'The invitation code is being verified! ',
-                                                            style: GoogleFonts
-                                                                .ibmPlexSans(
-                                                                    fontSize:
-                                                                        16,
-                                                                    color: Colors
-                                                                        .white),
-                                                          ),
-                                                          const SizedBox(
-                                                              height: 10),
-                                                          const CircularProgressIndicator(
-                                                            color: AppColors
-                                                                .colorButton,
-                                                          )
-                                                        ],
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        TextButton(
+                                          onPressed: () {
+                                            if (textEdit.text.isEmpty) {
+                                              ShowSnackBar(context,
+                                                  content:
+                                                      'Enter The Code Please!');
+                                            } else {
+                                              textEdit.clear();
+                                              Navigator.of(context).pop();
+                                              showDialog(
+                                                barrierDismissible: false,
+                                                context: context,
+                                                builder: (BuildContext context) {
+                                                  dialogContext = context;
+                                                  return Dialog(
+                                                    alignment: Alignment.center,
+                                                    backgroundColor:
+                                                        AppColors.background,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              10),
+                                                      child: SizedBox(
+                                                        height: 130,
+                                                        child: Column(
+                                                          children: [
+                                                            Text(
+                                                              'The invitation code is being verified! ',
+                                                              style: GoogleFonts
+                                                                  .ibmPlexSans(
+                                                                      fontSize:
+                                                                          16,
+                                                                      color: Colors
+                                                                          .white),
+                                                            ),
+                                                            const SizedBox(
+                                                                height: 10),
+                                                            const CircularProgressIndicator(
+                                                              color: AppColors
+                                                                  .colorButton,
+                                                            )
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                            Future.delayed(
-                                              const Duration(
-                                                seconds: 2,
-                                              ),
-                                              () {
-                                                Navigator.pop(dialogContext);
-                                                ShowSnackBar(dialogContext,
-                                                    content:
-                                                        'The code is wrong or used!');
-                                                showDialog(
-                                                  barrierDismissible: false,
-                                                  context: dialogContext,
-                                                  builder:
-                                                      (BuildContext context) {
-                                                    dialogContext2 = context;
-                                                    return Dialog(
-                                                      insetPadding:
-                                                          const EdgeInsets
-                                                                  .symmetric(
-                                                              horizontal: 160),
-                                                      backgroundColor:
-                                                          AppColors.background,
-                                                      child: SizedBox(
-                                                        height: 70,
-                                                        width: 40,
-                                                        child: Center(
-                                                            child: Lottie.asset(
-                                                                'images/error.json')),
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                                Future.delayed(
-                                                    const Duration(seconds: 2),
-                                                    () {
-                                                  Navigator.of(dialogContext2)
-                                                      .pop(); // إغلاق الديالوق الثالث
-                                                });
-                                              },
-                                            );
-                                          }
-                                        },
-                                        child: Text('Check',
-                                            style: GoogleFonts.ibmPlexSans(
-                                                fontSize: 20,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold)),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      TextButton(
-                                        onPressed: () async {
-                                          final Uri url = Uri.parse(
-                                              'https://aimtool.site/get-cod-genuyf56jhf2/');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(url,
-                                                mode: LaunchMode
-                                                    .externalApplication);
-                                          } else {
-                                            throw 'Could not launch $url';
-                                          }
-                                        },
-                                        child: Text('Get Code',
-                                            style: GoogleFonts.ibmPlexSans(
-                                                fontSize: 20,
-                                                color: Colors.white70,
-                                                fontWeight: FontWeight.bold)),
-                                      ),
-                                    ],
+                                                  );
+                                                },
+                                              );
+                                              Future.delayed(
+                                                const Duration(
+                                                  seconds: 2,
+                                                ),
+                                                () {
+                                                  Navigator.pop(dialogContext);
+                                                  ShowSnackBar(dialogContext,
+                                                      content:
+                                                          'The code is wrong or used!');
+                                                  showDialog(
+                                                    barrierDismissible: false,
+                                                    context: dialogContext,
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      dialogContext2 = context;
+                                                      return Dialog(
+                                                        insetPadding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                horizontal: 160),
+                                                        backgroundColor:
+                                                            AppColors.background,
+                                                        child: SizedBox(
+                                                          height: 70,
+                                                          width: 40,
+                                                          child: Center(
+                                                              child: Lottie.asset(
+                                                                  'images/error.json')),
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                  Future.delayed(
+                                                      const Duration(seconds: 2),
+                                                      () {
+                                                    Navigator.of(dialogContext2)
+                                                        .pop(); // إغلاق الديالوق الثالث
+                                                  });
+                                                },
+                                              );
+                                            }
+                                          },
+                                          child: Text('Check',
+                                              style: GoogleFonts.ibmPlexSans(
+                                                  fontSize: 20,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        TextButton(
+                                          onPressed: () async {
+                                            final Uri url = Uri.parse(
+                                                'https://aimtool.site/get-cod-genuyf56jhf2/');
+                                            if (await canLaunchUrl(url)) {
+                                              await launchUrl(url,
+                                                  mode: LaunchMode
+                                                      .externalApplication);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          },
+                                          child: Text('Get Code',
+                                              style: GoogleFonts.ibmPlexSans(
+                                                  fontSize: 20,
+                                                  color: Colors.white70,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                      ],
+                                    ),
                                   )
                                 ]),
                           ),
