@@ -206,7 +206,7 @@ class _DirectScreenState extends State<DirectScreen> with Helpers {
             ),
             Row(
               children: [
-                Switch(
+                Switch.adaptive(
                   value: _switchValue,
                   activeColor: AppColors.colorButton,
                   onChanged: (value) {
@@ -285,7 +285,7 @@ Available (Normal Global)''',
             ),
             Row(
               children: [
-                Switch(
+                Switch.adaptive(
                   value: _switchValueTow,
                   activeColor: AppColors.colorButton,
                   onChanged: (value) {
@@ -308,7 +308,7 @@ Available (Normal Global)''',
             ),
             Row(
               children: [
-                Switch(
+                Switch.adaptive(
                   value: _switchValueThree,
                   activeColor: AppColors.colorButton,
                   onChanged: (value) {
@@ -329,7 +329,7 @@ Available (Normal Global)''',
             ),
             Row(
               children: [
-                Switch(
+                Switch.adaptive(
                   value: _switchValueFour,
                   activeColor: AppColors.colorButton,
                   onChanged: (value) {
