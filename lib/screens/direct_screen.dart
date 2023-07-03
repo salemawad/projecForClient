@@ -368,6 +368,7 @@ Available (Normal Global)''',
                             width: 200,
                             height: 250,
                             child: Column(
+
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Expanded(
